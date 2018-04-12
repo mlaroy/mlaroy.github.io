@@ -11,7 +11,7 @@ const app = (function(options = {}) {
   const navEl = document.querySelector(actual.navEl);
 
   const init = function() {
-    console.log('init');
+    // console.log('init');
 
     // init nav scroll method
     doNav();
