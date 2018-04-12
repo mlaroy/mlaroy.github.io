@@ -1,0 +1,25 @@
+.footer {
+  @apply .text-white;
+  @apply .bg-jungle-green;
+  @apply .px-8;
+  @apply .py-4;
+  @apply .text-xs;
+
+  a {
+    @apply .text-white;
+  }
+}
+
+.social-nav {
+  @apply .m-0;
+  @apply .flex;
+  // @apply .align-center;
+
+  a {
+    display: block;
+  }
+
+  a + a {
+    @apply .ml-2;
+  }
+}

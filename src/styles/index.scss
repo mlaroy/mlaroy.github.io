@@ -1,0 +1,143 @@
+@tailwind preflight;
+
+@import 'variables.scss';
+@import 'reset.scss';
+@import 'type.scss';
+@import 'animation.scss';
+@import 'main-nav.scss';
+@import 'work.scss';
+@import 'header.scss';
+@import 'hero.scss';
+@import 'footer.scss';
+
+.skip {
+  position: absolute;
+  left: -9999em;
+  top: 0;
+  @apply .p-2;
+
+  &:focus {
+    top: 0;
+    left: 0;
+    z-index: 25;
+    @apply bg-white;
+  }
+}
+
+.white-logo {
+  width: 40px;
+  path {
+    transition: all 0.25s ease;
+    fill: #fff;
+  }
+}
+
+.site-section {
+  min-height: 100vh;
+  @apply .px-8;
+  @apply .py-l;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.readable-p {
+  // max-width: 800px;
+}
+
+.block-center {
+  margin: 0 auto;
+}
+
+.callout {
+  @apply .rounded;
+  @apply .p-4;
+  @apply .bg-myrtle-green;
+  @apply .text-white;
+
+  position: sticky;
+  top: 4rem;
+  // background: $gradient;
+  // @apply .mt-l;
+  // @apply .readable-p;
+}
+
+.contact-options {
+  div {
+    flex-basis: 50%;
+    padding-right: 3rem;
+  }
+}
+
+.bg-crown {
+  position: relative;
+  overflow: hidden;
+
+  &:after {
+    content: '';
+    background: url('../assets/crown_2.svg') no-repeat;
+    background-size: cover;
+    opacity: 0.2;
+    display: block;
+    height: 100vh;
+    width: 100vh;
+    position: absolute;
+    bottom: -22%;
+    right: -10%;
+  }
+
+}
+
+
+// h1 {
+//   font-size: $large;
+// }
+
+// h2 {
+//   font-size: $medium;
+// }
+
+// p,
+// ul,
+// ol,
+// table,
+// a,
+// input,
+// select,
+// textarea {
+//   font-size: $small;
+// }
+
+
+@media #{$breakpoint} {
+  html,
+  body {
+    // font-size: calc( 16px + (21 - 16) * (100vw - 300px) / (800 - 400) );
+    font-size: 22px;
+  }
+
+  .readable-p {
+    max-width: 800px;
+  }
+
+  .callout {
+    margin-top: 0;
+  }
+}
+
+
+// @media (min-width: 590px) {
+//   html, body {
+//     font-size: 18px;
+//   }
+// }
+
+// @media (min-width: 1024px) {
+//   html, body {
+//     font-size: 20px;
+//   }
+// }
+
+@tailwind utilities;

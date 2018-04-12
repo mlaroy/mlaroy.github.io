@@ -1,0 +1,33 @@
+.work-list {
+  // list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.work-pills {
+  label {
+    display: block;
+    @apply .py-2;
+    @apply .px-4;
+    @apply .rounded-full;
+    @apply .bg-myrtle-green;
+    @apply .text-white;
+    @apply .text-xs;
+    @apply .cursor-pointer;
+    @apply .mr-2;
+    @apply .mb-2;
+    text-align: center;
+    transition: all 0.25s ease;
+
+    &.active {
+       @apply .bg-shiny-shamrock;
+    }
+  }
+
+  input {
+    position: absolute;
+    left: -9999px;
+    height: 0;
+    width: 0;
+  }
+}

@@ -1,0 +1,52 @@
+.main-nav {
+  @apply .text-center;
+
+  position: fixed;
+  width: 100%;
+  top: 0;
+  transition: all 0.25s ease;
+  // background: #fff;
+  z-index: 50;
+
+  &.scrolled {
+    // position: sticky;
+    @apply .bg-myrtle-green;
+  }
+
+  .container {
+    @apply .flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .white-logo,
+  svg {
+    width: 40px;
+    path {
+      transition: all 0.25s ease;
+      fill: #fff;
+    }
+  }
+
+  a {
+    @apply .text-white;
+    @apply .mx-2;
+
+    transition: all 0.25s ease;
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+      @apply .text-eton-blue;
+
+      svg {
+        path {
+          fill: #9CC5A1;
+        }
+      }
+    }
+  }
+
+
+}

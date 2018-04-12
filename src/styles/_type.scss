@@ -1,0 +1,94 @@
+html, body {
+  min-height: 100%;
+  width: 100%;
+  // font-size: 100%;
+  font-size: 16px;
+  font-family: 'Roboto', 'Helvetica Neue', Helvetica, sans-serif;
+  text-align: left;
+  font-weight: lighter;
+  @apply .text-jungle-green;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Prata', 'Times New Roman', serif;
+  // @apply .mt-8;
+}
+
+h1 {
+  @apply .text-4xl;
+  margin: 0;
+}
+
+h2 {
+  @apply .text-3xl;
+  @apply .mb-8;
+}
+
+h3 {
+  @apply .text-xl;
+  @apply .mb-4;
+}
+
+h4 {
+  @apply .text-lg;
+  @apply .mb-3;
+}
+
+h5 {
+  @apply .text-base;
+  @apply .mb-2;
+}
+
+p {
+  @apply .leading-normal;
+
+  & + & {
+    @apply .mt-6;
+  }
+
+  & + ul {
+    @apply .mt-4;
+  }
+
+  & + h2,
+  & + h3,
+  & + h4 {
+    @apply .mt-4;
+  }
+}
+
+a {
+  @apply .text-jungle-green;
+  transition: all 0.25s ease;
+
+  &:hover,
+  &:focus {
+    @apply .text-shiny-shamrock;
+  }
+}
+
+@media #{$breakpoint} {
+  h1 {
+    font-size: 3.5rem;
+  }
+}
+
+.button {
+  @apply .text-sm;
+  @apply .py-2;
+  @apply .px-4;
+  @apply .rounded;
+  @apply .bg-shiny-shamrock;
+  @apply .text-white;
+  text-decoration: none;
+  transition: all 0.25s ease;
+
+  &:hover,
+  &:focus {
+    @apply .bg-myrtle-green;
+    @apply .text-white;
+  }
+}
