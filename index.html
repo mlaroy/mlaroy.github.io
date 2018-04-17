@@ -26,6 +26,7 @@
     <nav class="main-nav p-2">
         <div class="container">
             <a href="#top">
+                <span class="screen-reader">Page top</span>
                 <svg  x="0px" y="0px" viewBox="0 0 236.893 236.893">
                 <g>
                     <path d="M221.323,75.235c-8.586,0-15.563,6.984-15.563,15.564c0,3.361,1.102,6.46,2.929,9.003l-29.417,18.672l-7.728-16.751
@@ -114,43 +115,59 @@
             <div class="container">
                 <h2>Recent Work</h2>
                 <ul class="list-reset md:flex md:inline-flex work-pills mb-8">
-                    <label :class="[work == 'vct' ? 'active' : '' ]">
-                        <input type="radio" v-model="work" value="vct">
-                        Vancouver Civic Theatres
-                    </label>
-                    <label :class="[work == 'cdirect' ? 'active' : '' ]">
-                        <input type="radio" v-model="work" value="cdirect">
-                        Credential Direct
-                    </label>
-                    <label :class="[work == 'ipom' ? 'active' : '' ]">
-                        <input type="radio" v-model="work" value="ipom">
-                        In Pursuit of More
-                    </label>
-                    <label :class="[work == 'sf' ? 'active' : '' ]">
-                        <input type="radio" v-model="work" value="sf">
-                        Samuel French
-                    </label>
+                    <li>
+                        <label :class="[work == 'vct' ? 'active' : '' ]">
+                            <input type="radio" v-model="work" value="vct">
+                            Vancouver Civic Theatres
+                        </label>
+                    </li>
+                    <li>
+                        <label :class="[work == 'cdirect' ? 'active' : '' ]">
+                            <input type="radio" v-model="work" value="cdirect">
+                            Credential Direct
+                        </label>
+                    </li>
+                    <li>
+                        <label :class="[work == 'ipom' ? 'active' : '' ]">
+                            <input type="radio" v-model="work" value="ipom">
+                            In Pursuit of More
+                        </label>
+                    </li>
+                    <li>
+                        <label :class="[work == 'sf' ? 'active' : '' ]">
+                            <input type="radio" v-model="work" value="sf">
+                            Samuel French
+                        </label>
+                    </li>
                 </ul>
                 <div class="lg:flex work-list flex-wrap">
-                    <div class="fadeIn readable-p block-center" v-show="work == 'vct'">
+                    <div class="fadeIn readable-p block-center" v-show="work == 'vct'" :aria-hidden="[work == 'vct' ? 'false' : 'true' ]">
                         <h4>Vancouver Civic Theatres</h4>
                         <!-- <img src="https://placehold.it/800x380" alt="" class="shadow-lg mb-8"> -->
-                        <img src="vct.9a08cb46b54a9cd46323.png" alt="" class="shadow-lg mb-8">
+                        <a href="https://vancouvercivictheatres.com/" class="work-list__image-link">
+                            <img src="vct.9a08cb46b54a9cd46323.png" alt="" class="shadow-lg mb-8">
+                        </a>
                         <p>Beautifully designed at Engine Digital, this project was front-end only. As the lead developer for this <a href="https://vancouvercivictheatres.com/">VCT</a> project, I handled all of the usual suspects in the front end: HTML, CSS, and JavaScript. This includes some complex tools like a venue availability calendar and rental estimator.</p>
                     </div>
-                    <div class="fadeIn readable-p block-center" v-show="work == 'cdirect'">
+                    <div class="fadeIn readable-p block-center" v-show="work == 'cdirect'" :aria-hidden="[work == 'cdirect' ? 'false' : 'true' ]">
                         <h4>Credential Direct</h4>
-                        <img src="credential.fc132c7db6e62980b3fe.png" alt="" class="shadow-lg mb-8">
+                        <a href="https://credentialdirect.com/" class="work-list__image-link">
+                            <img src="credential.fc132c7db6e62980b3fe.png" alt="" class="shadow-lg mb-8">
+                        </a>
                         <p>Another Engine Digital project, <a href="https://credentialdirect.com/">Credential Direct</a> was a top-to-bottom WordPress build. As the lead developer, I built out the front-end, as well as the WordPress integration, including JavaScript features using the WordPress REST API.</p>
                     </div>
-                    <div class="fadeIn readable-p block-center" v-show="work == 'sf'">
+                    <div class="fadeIn readable-p block-center" v-show="work == 'sf'" :aria-hidden="[work == 'sf' ? 'false' : 'true' ]">
                         <h4>Samuel French</h4>
-                        <img src="sf.ae2e95c4fafbaa5c8a33.png" alt="" class="shadow-lg mb-8">
+                        <a href="https://www.samuelfrench.com/" class="work-list__image-link">
+                            <img src="sf.ae2e95c4fafbaa5c8a33.png" alt="" class="shadow-lg mb-8">
+                        </a>
                         <p>The leader of the front-end team for this project for Engine Digital, I was responsible for the front-end on this e-commerce project for <a href="https://www.samuelfrench.com/">Samuel French</a>. Most notable was the complex Vue integration managing user logins, comment systems, shopping carts, and the vast product catalog.</p>
                     </div>
-                    <div class="fadeIn readable-p block-center" v-show="work == 'ipom'">
+                    <div class="fadeIn readable-p block-center" v-show="work == 'ipom'" :aria-hidden="[work == 'ipom' ? 'false' : 'true' ]">
                         <h4>In Pursuit of More</h4>
-                        <img src="ipom.c4af7dcc59f747c3a009.png" alt="" class="shadow-lg mb-8">
+                        <a href="http://inpursuitofmore.com/" class="work-list__image-link">
+                            <img src="ipom.c4af7dcc59f747c3a009.png" alt="" class="shadow-lg mb-8">
+                        </a>
                         <p>A consulting project for a fantastic food and lifestyle blog, <a href="http://inpursuitofmore.com/">IPOM</a> was a total rebuild - with a new design, I did both the front-end and the WordPress back-end, greatly improving load times and overall site speed.</p>
                     </div>
                 </div>
@@ -215,9 +232,18 @@
                             </g>
                         </svg>
                     </a>
+                    <a href="https://linkedin.com/in/mikelaroy/">
+                        <svg x="0px" y="0px" width="25px" height="25px" viewBox="0 0 512 512" xml:space="preserve">
+                            <title>LinkedIn</title>
+                            <g>
+                                <path fill="#ffffff" d="M426,0H86C38.7,0,0,38.7,0,86v340c0,47.3,38.7,86,86,86h340c47.301,0,86-38.7,86-86V86C512,38.7,473.301,0,426,0z M192,416   h-64V192h64V416z M160,160c-17.673,0-32-14.327-32-32s14.327-32,32-32s32,14.327,32,32S177.673,160,160,160z M416,416h-64V288   c0-17.673-14.326-32-32-32s-32,14.327-32,32v128h-64V192h64v39.736C301.199,213.604,321.377,192,344,192c39.766,0,72,35.817,72,80   V416z"></path>
+                            </g>
+
+                        </svg>
+                    </a>
                 </p>
             </div>
         </div>
     </footer>
-<script type="text/javascript" src="main.a9a8a385c4d7a4c25e21.js"></script></body>
+<script type="text/javascript" src="main.8df892905235fb574b2e.js"></script></body>
 </html>
